@@ -179,3 +179,13 @@ body {
   .eql-cntrb {
     font-size: smaller;
   }
+
+  ul {
+    list-style-type: square;
+    margin-left:30px;
+  }
+
+  li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }

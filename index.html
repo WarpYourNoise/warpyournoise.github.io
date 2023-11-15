@@ -648,6 +648,94 @@
   </section>
   <!-- End Warpped Noise in Latent Diffusion Models -->
 
+  <!-- Comparison with DDIM inversion -->
+  <section class="hero is-small" id="ddim">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Supplementary: Comparison with DDIM inversion</h2>
+        <!-- Side by Side Bilinear interpolation, Ours -->
+        <div>
+          <p>DDIM inversion is a popular inversion method that has also been used to obtain more
+            informative noise priors for video editing tasks. However, it suffers from two main 
+            problems. First, it only produces one noise map per image. 
+            This may not always be compatible with other diffusion-based methods like SDEdit or I&sup2SB, 
+            which uses DDPM. Second, as it remains primarily an inversion method, the spatial and 
+            temporal information of the image are entangled inside the noise.
+        </p>
+        <br>
+        <p>We compare our method with DDIM inversion in the appearance transfer example with SDEdit. We experiment with two settings:
+          <ul>
+            <li><b>DDIM inversion to intermediate step</b> (first row): similar to how we applied SDEdit above, 
+              we use DDIM to invert the synthetic video frames back to an intermediate timestep (60% of total steps), and
+            then denoise it using forward DDIM. As expected, since there is no prompt to be changed or other settings to be modified,
+            it mostly reconstructs the original synthetic video without adding any realistic appearance details.</li>
+            <li><b>DDIM inversion as initial noise</b> (second row): we run a full DDIM inversion for each frame to obtain a noise map,
+            which we treat similarly to the other noise priors we showed above: we add it to input frames and 
+          denoise using forward DDIM. Because the input video is far from the data distribution of the model (trained on realistic images of
+          bedrooms), the DDIM-inverted noise is far from Gaussian. This makes it a poor candidate as a noise prior.</li>
+          </ul>
+          As a comparison, our noise prior only contains temporal information, so the model can generate realistic details
+          on top of the synthetic scene without being constrained to reconstruct the input sequence. Furthermore, by applying 
+          the same warping to different noise samples (which DDIM inversion cannot do), we can obtain different variations 
+          in the final result (third row). Note that for fairness, we also use deterministic DDIM for denoising in our method, i.e. 
+          our noise warping method is only used once for the initial noise.
+        </p>
+        <br>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p>DDIM inversion to intermediate step</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DDIM/samples_ddim_rec_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p>DDIM inversion as initial noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DDIM/samples_ddim_add_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DDIM/samples_adv_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div>
+          <br>
+          <p>
+            Here is a visual comparison between our noise prior and the one obtained from 
+            DDIM inversion. While DDIM inversion produces temporally correlated noise, its 
+            distribution heavily depends on how far the input video is from the training
+            distribution of the diffusion model. In contrast, our warping method retains the 
+            Gaussian properties of the noise.
+          </p>
+          <br>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p>DDIM inversion noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DDIM/noise_ddim.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DDIM/noise_adv.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Realistic Appearance Transfer -->
+
 </body>
 
 </html>
