@@ -85,7 +85,7 @@
           <div id="tree">
             <p>Fixed Noise</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Swan/fixed.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Swan/fix.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
@@ -95,7 +95,7 @@
             </video>
           </div>
           <div id="tree">
-            <p>PYoCo (Ge et al. 2023)</p>
+            <p>PYoCo [1]</p>
             <video poster="" autoplay controls muted loop>
               <source src="./docs/assets/videos/SuperRes/Swan/pprog.mp4" type="video/mp4">
             </video>
@@ -103,7 +103,7 @@
           <div id="tree">
             <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
             <video poster="" id="result" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Swan/advected.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Swan/adv.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -172,7 +172,7 @@
           <p>Our method allows warping Gaussian noise with extreme deformations while still preserving its Gaussian properties. 
             This is not achievable with standard warping methods, as we show in the comparison below. In the first row,
             we compare with standard interpolation methods applied on consecutive frames \((F_{n-1}, F_{n})\). These tend to create numerical
-            dissipation, which destroys high-frequency details and produce blurring. In the second row, we compute a flow map between the 
+            dissipation, which destroys high-frequency details and produces blurring. In the second row, we compute a flow map between the 
             initial frame and the current one, and apply the interpolation methods on the pair \((F_0, F_{n})\). Due to numerical error in
             the mapping, flickering and incoherence appear in the result. Our \(\smallint\)-noise method outperforms all existing warping 
             methods by transporting the noise perfectly while keeping its Gaussian properties.
@@ -237,10 +237,11 @@
           </div>
         </div>
         <div>
-          <p>*The root-bilinear interpolation is a simple modification of bilinear interpolation
+          <br>
+          <p><small>*The root-bilinear interpolation is a simple modification of bilinear interpolation
             where we replace the interpolation coefficients by their squareroot. This has the property
             that when applied to a set of independent Gaussian noise samples, it would preserve the unit
-            variance.
+            variance.</small>
         </p>
         <br>
         </div>
@@ -259,25 +260,51 @@
           <div id="tree">
             <p>Random Noise</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/Bedroom/random.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/Bedroom/rnd_xfa.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
             <p>Fixed Noise</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/Bedroom/fixed.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/Bedroom/fix_xfa.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
+            <p>PYoCo (progressive) [1]</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/Bedroom/pprog_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Control-A-Video [2]</p>
+            <video poster="" id="result" autoplay controls muted loop>
+              <source src="./docs/assets/videos/Bedroom/cav_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
             <p>Bilinear Warping</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/Bedroom/bilinear.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/Bedroom/bilinear_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Bicubic Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/Bedroom/bicubic_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Nearest Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/Bedroom/nearest_xfa.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
             <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
             <video poster="" id="result" autoplay controls muted loop>
-              <source src="./docs/assets/videos/Bedroom/advected.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/Bedroom/adv_xfa.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -294,10 +321,39 @@
 
         <div id="hero-list">
           <div id="tree">
+            <p>Input (low-res)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Bear/input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Random Noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Bear/rnd.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
             <p>Fixed Noise</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Bear/fixed.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Bear/fix.mp4" type="video/mp4">
             </video>
+          </div>
+          <div id="tree">
+            <p>PYoCo (progressive) [1]</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Bear/pprog.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Control-A-Video [2]</p>
+            <video poster="" id="result" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Bear/cav.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <img src="./docs/assets/videos/Noise/placeholder.png" width="100%" />
           </div>
           <div id="tree">
             <p>Bilinear Warping</p>
@@ -306,24 +362,62 @@
             </video>
           </div>
           <div id="tree">
-            <p>PYoCo (Ge et al. 2023)</p>
+            <p>Bicubic Warping</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Bear/pprog.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Bear/bicubic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Nearest Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Bear/nearest.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
             <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
             <video poster="" id="result" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Bear/advected.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Bear/adv.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <br>
+
+        <div id="hero-list">
+          <div id="tree">
+            <p>Input (low-res)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Swan/input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Random Noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Swan/rnd.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Fixed Noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Swan/fix.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>PYoCo (progressive) [1]</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Swan/pprog.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Control-A-Video [2]</p>
+            <video poster="" id="result" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Swan/cav.mp4" type="video/mp4">
             </video>
           </div>
         </div>
         <div id="hero-list">
           <div id="tree">
-            <p>Fixed Noise</p>
-            <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Swan/fixed.mp4" type="video/mp4">
-            </video>
+            <img src="./docs/assets/videos/Noise/placeholder.png" width="100%" />
           </div>
           <div id="tree">
             <p>Bilinear Warping</p>
@@ -332,15 +426,21 @@
             </video>
           </div>
           <div id="tree">
-            <p>PYoCo (Ge et al. 2023)</p>
+            <p>Bicubic Warping</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Swan/pprog.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Swan/bicubic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Nearest Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/SuperRes/Swan/nearest.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
             <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
             <video poster="" id="result" autoplay controls muted loop>
-              <source src="./docs/assets/videos/SuperRes/Swan/advected.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/SuperRes/Swan/adv.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -350,23 +450,46 @@
   <!-- End Video Super-resolution with I2SB -->
 
   <!-- JPEG Restoration with I2SB -->
-  <section class="hero is-small" id="jpeg-restore">
+  <section class="hero is-small" id="video-sr">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">JPEG Restoration with <i>I&sup2SB</i></h2>
-        <!-- 2 examples -->
+        <h2 class="title is-3">Video Super-resolution with <i>I&sup2SB</i></h2>
+
         <div id="hero-list">
           <div id="tree">
-            <p>Fixed Noise</p>
+            <p>Input (JPEG compressed)</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/JPEG/Cow/fixed.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/JPEG/Cow/input.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
             <p>Random Noise</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/JPEG/Cow/random.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/JPEG/Cow/rnd.mp4" type="video/mp4">
             </video>
+          </div>
+          <div id="tree">
+            <p>Fixed Noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Cow/fix.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>PYoCo (progressive) [1]</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Cow/pprog.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Control-A-Video [2]</p>
+            <video poster="" id="result" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Cow/cav.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <img src="./docs/assets/videos/Noise/placeholder.png" width="100%" />
           </div>
           <div id="tree">
             <p>Bilinear Warping</p>
@@ -375,24 +498,62 @@
             </video>
           </div>
           <div id="tree">
+            <p>Bicubic Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Cow/bicubic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Nearest Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Cow/nearest.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
             <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
             <video poster="" id="result" autoplay controls muted loop>
-              <source src="./docs/assets/videos/JPEG/Cow/advected.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/JPEG/Cow/adv.mp4" type="video/mp4">
             </video>
           </div>
         </div>
+
+        <br>
+
         <div id="hero-list">
           <div id="tree">
-            <p>Fixed Noise</p>
+            <p>Input (JPEG compressed)</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/JPEG/Train/fixed.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/JPEG/Train/input.mp4" type="video/mp4">
             </video>
           </div>
           <div id="tree">
             <p>Random Noise</p>
             <video poster="" autoplay controls muted loop>
-              <source src="./docs/assets/videos/JPEG/Train/random.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/JPEG/Train/rnd.mp4" type="video/mp4">
             </video>
+          </div>
+          <div id="tree">
+            <p>Fixed Noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Train/fix.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>PYoCo (progressive) [1]</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Train/pprog.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Control-A-Video [2]</p>
+            <video poster="" id="result" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Train/cav.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <img src="./docs/assets/videos/Noise/placeholder.png" width="100%" />
           </div>
           <div id="tree">
             <p>Bilinear Warping</p>
@@ -401,9 +562,21 @@
             </video>
           </div>
           <div id="tree">
+            <p>Bicubic Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Train/bicubic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Nearest Warping</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/JPEG/Train/nearest.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
             <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
             <video poster="" id="result" autoplay controls muted loop>
-              <source src="./docs/assets/videos/JPEG/Train/advected.mp4" type="video/mp4">
+              <source src="./docs/assets/videos/JPEG/Train/adv.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -501,7 +674,7 @@
             </video>
           </div>
           <div id="tree">
-            <p>Residual</p>
+            <p>Control-A-Video [2]</p>
             <video poster="" autoplay controls muted loop>
               <source src="./docs/assets/videos/Fluid/testsim/residual.mp4" type="video/mp4">
             </video>
@@ -535,7 +708,7 @@
             </video>
           </div>
           <div id="tree">
-            <p>Residual</p>
+            <p>Control-A-Video [2]</p>
             <video poster="" autoplay controls muted loop>
               <source src="./docs/assets/videos/Fluid/trainsim/residual.mp4" type="video/mp4">
             </video>
@@ -569,7 +742,7 @@
             </video>
           </div>
           <div id="tree">
-            <p>Residual</p>
+            <p>Control-A-Video [2]</p>
             <video poster="" autoplay controls muted loop>
               <source src="./docs/assets/videos/Fluid/valsim/residual.mp4" type="video/mp4">
             </video>
@@ -737,6 +910,24 @@
     </div>
   </section>
   <!-- End Realistic Appearance Transfer -->
+
+  <!-- References -->
+  <section class="hero is-small is-light" id="ddim">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">References</h2>
+        <!-- Side by Side Bilinear interpolation, Ours -->
+        <div>
+          <p> [1] Ge, Songwei, et al. "Preserve your own correlation: A noise prior for video diffusion models." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.
+          </p>
+          <br>
+          <p>[2] Chen, Weifeng, et al. "Control-A-Video: Controllable Text-to-Video Generation with Diffusion Models." arXiv preprint arXiv:2305.13840 (2023).
+        </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End References -->
 
 </body>
 
