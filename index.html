@@ -308,6 +308,7 @@
             </video>
           </div>
         </div>
+        <br>
       </div>
     </div>
   </section>
@@ -444,6 +445,7 @@
             </video>
           </div>
         </div>
+        <br>
       </div>
     </div>
   </section>
@@ -580,6 +582,7 @@
             </video>
           </div>
         </div>
+        <br>
       </div>
     </div>
   </section>
@@ -643,6 +646,7 @@
             </video>
           </div>
         </div>
+        <br>
       </div>
     </div>
   </section>
@@ -755,15 +759,126 @@
           </div>
         </div>
       </div>
+      <br>
     </div>
   </section>
   <!-- End Fluid Simulation Super-resolution -->
-  
-  <!-- Warpped Noise in Latent Diffusion Models -->
-  <section class="hero is-small is-light" id="warp-ldm">
+
+  <!-- Integration with Deep Floyd -->
+  <section class="hero is-small is-light" id="deepfloyd">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">Supplementary: Warped Noise in Latent Diffusion</h2>
+        <h2 class="title is-3">(Supplementary) Integration with DeepFloyd IF</h2>
+        <!-- Side by Side Bilinear interpolation, Ours -->
+        <div>
+          <p><a href="">DeepFloyd IF</a> is a state-of-the-art text-to-image diffusion model by Stability AI. It consists of a frozen text encoder
+            and three cascaded pixel diffusion models, respectively generating 64x64 px, 256x256 px and 1024x1024 px images. <b>We show
+            that our \(\smallint\)-noise prior can be integrated with DeepFloyd IF.</b> We illustrate this on two tasks: video super-resolution
+            and video stylization.
+        </p>
+        <br>
+        <p>
+          <b>Video super-resolution:</b> we give a 64x64 video sample to the Stage II model and use the following prompts to guide super-resolution:
+          "A blackswan on water, photography, 4k", "A car on a road in the mountains". We additionally apply a simple 
+          cross-frame attention mechanism to help improve temporal coherency.
+          The results below comparing different noise priors show that the simple combination of cross-frame attention with our \(\smallint\)-noise prior
+          significantly reduces visual artifacts when lifting DeepFloyd IF to the temporal domain. 
+        </p>
+        <br>
+        <div id="hero-list">
+          <div id="tree">
+            <p>Input (low-res)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/blackswan_sr4_input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>DeepFloyd IF + Random noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/blackswan_sr4_rnd_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>DeepFloyd IF + Fixed noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/blackswan_sr4_fix_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p style="font-weight: bold;">DeepFloyd IF + \(\smallint\)-noise (Ours)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/blackswan_sr4_adv_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_sr4_input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_sr4_rnd_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_sr4_fix_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_sr4_adv_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br>
+        <p>
+          <b>Video stylization:</b> we experiment with DeepFloyd IF's style transfer ability on the mountain car example. In
+          the following we show a style of an oil painting applied to the original video. Our \(\int\)-noise prior is compared
+          to fixed and random noise, and cross-frame attention is applied (anchor frame every 10 frames). As one can see,
+           the choice of the noise prior has a clear impact on the temporal coherence of the final results.
+           Note that better tuning of the style transfer parameters in DeepFloyd IF is likely to further improve the stylization quality. 
+        </p>
+        <br>
+        <div id="hero-list">
+          <div id="tree">
+            <p>Input</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_st_oilpaint_input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>DeepFloyd IF + Random noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_st_oilpaint_rnd_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>DeepFloyd IF + Fixed noise</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_st_oilpaint_fix_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p style="font-weight: bold;">DeepFloyd IF + \(\smallint\)-noise (Ours)</p>
+            <video poster="" autoplay controls muted loop>
+              <source src="./docs/assets/videos/DeepFloyd/carturn_st_oilpaint_adv_ddpm50.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </section>
+  <!-- End Integration with DeepFloyd -->
+  
+  <!-- Warpped Noise in Latent Diffusion Models -->
+  <section class="hero is-small" id="warp-ldm">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">(Supplementary) Warped Noise in Latent Diffusion</h2>
         <!-- 2 examples -->
         <div id="hero-header">
           <p>No Cross-Frame Attention</p>
@@ -822,10 +937,10 @@
   <!-- End Warpped Noise in Latent Diffusion Models -->
 
   <!-- Comparison with DDIM inversion -->
-  <section class="hero is-small" id="ddim">
+  <section class="hero is-small is-light" id="ddim">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">Supplementary: Comparison with DDIM inversion</h2>
+        <h2 class="title is-3">(Supplementary) Comparison with DDIM inversion</h2>
         <!-- Side by Side Bilinear interpolation, Ours -->
         <div>
           <p>DDIM inversion is a popular inversion method that has also been used to obtain more
