@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>How I Warped Your Noise</title>
+  <link rel="icon" type="image/x-icon" href="docs/assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/buttons.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><i>How I Warped Your Noise</i></h1>
+            <h1 class="title is-2 publication-title">Supplementary Results</h1>
+               <!-- Main page Link -->
+               <span class="link-block">
+                <a href="index.html"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-link"></i>
+                </span>
+                <span>Back to Main Page</span>
+              </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Validating our noise prior -->
+  <section class="hero is-small is-light" id="noise-comp">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">More Noise Warping Comparisons 
+          <button class="pause-btn button is-normal is-dark " style="float: right; margin-left: 0.5rem;"><span class="icon"><i class="fas fa-pause"></i></span></button>
+          <button class="play-btn button is-normal is-dark " style="float: right; margin-left: 0.5rem;"><span class="icon"><i class="fas fa-play"></i></span></button>
+          <button class="backward-btn button is-normal is-dark " style="float: right;"><span class="icon"><i class="fas fa-backward"></i></span></button>
+        </h2>
+        <div>
+          <p>Our method allows warping Gaussian noise with extreme deformations while still preserving its Gaussian properties. 
+            This is not achievable with standard warping methods, as we show in the comparison below. In the first row,
+            we compare with standard interpolation methods applied on consecutive frames \((F_{n-1}, F_{n})\). These tend to create numerical
+            dissipation, which destroys high-frequency details and produces blurring. In the second row, we compute a flow map between the 
+            initial frame and the current one, and apply the interpolation methods on the pair \((F_0, F_{n})\). Due to numerical error in
+            the mapping, flickering and incoherence appear in the result. Our \(\smallint\)-noise method outperforms all existing warping 
+            methods by transporting the noise perfectly while keeping its Gaussian properties.
+        </p>
+        <br>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p>Bilinear</p>
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/no_vwarp_bilinear.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Bicubic</p>
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/no_vwarp_bicubic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Nearest Neighbor</p>
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/no_vwarp_nearest.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p>Root-bilinear*</p>
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/no_vwarp_root.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/infinite_noise.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/vwarp_bilinear.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/vwarp_bicubic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/vwarp_nearest.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <video poster="" controls muted loop>
+              <source src="./docs/assets/videos/Noise/vwarp_root.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <img src="./docs/assets/videos/Noise/placeholder.png" width="100%" />
+          </div>
+        </div>
+        <div>
+          <br>
+          <p><small>*The root-bilinear interpolation is a simple modification of bilinear interpolation
+            where we replace the interpolation coefficients by their squareroot. This has the property
+            that when applied to a set of independent Gaussian noise samples, it would preserve the unit
+            variance.</small>
+        </p>
+        <br>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Validating our noise prior -->
+  
+  <!-- Warpped Noise in Latent Diffusion Models -->
+  <section class="hero is-small" id="warp-ldm">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Warped Noise in Latent Diffusion
+          <button class="pause-btn button is-normal is-dark " style="float: right; margin-left: 0.5rem;"><span class="icon"><i class="fas fa-pause"></i></span></button>
+          <button class="play-btn button is-normal is-dark " style="float: right; margin-left: 0.5rem;"><span class="icon"><i class="fas fa-play"></i></span></button>
+          <button class="backward-btn button is-normal is-dark " style="float: right;"><span class="icon"><i class="fas fa-backward"></i></span></button>
+        </h2>
+
+        <p>Here are some results of noise warping in latent diffusion models. Please refer to the paper appendix for more details.</p>
+        <!-- 2 examples -->
+        <div id="hero-header">
+          <p>No Cross-Frame Attention</p>
+          <div id="hero-list">
+            <div id="tree">
+              <p>Fixed Noise</p>
+              <video poster=""  controls muted loop>
+                <source src="./docs/assets/videos/Pizza/round_no_cfa/fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div id="tree">
+              <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+              <video poster=""  controls muted loop>
+                <source src="./docs/assets/videos/Pizza/round_no_cfa/advected.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div id="hero-header">
+          <p>With Cross-Frame Attention</p>
+          <div id="hero-list">
+            <div id="tree">
+              <p>Fixed Noise</p>
+              <video poster=""  controls muted loop>
+                <source src="./docs/assets/videos/Pizza/round_cfa/fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div id="tree">
+              <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+              <video poster=""  controls muted loop>
+                <source src="./docs/assets/videos/Pizza/round_cfa/advected.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div id="hero-header">
+          <p>With Cross-Frame Attention + Feature Injection</p>
+          <div id="hero-list">
+            <div id="tree">
+              <p>Fixed Noise</p>
+              <video poster=""  controls muted loop>
+                <source src="./docs/assets/videos/Pizza/feat_inj_4-11/fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div id="tree">
+              <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+              <video poster=""  controls muted loop>
+                <source src="./docs/assets/videos/Pizza/feat_inj_4-11/advected.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Warpped Noise in Latent Diffusion Models -->
+
+  <!-- Comparison with DDIM inversion -->
+  <section class="hero is-small is-light" id="ddim">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Comparison with DDIM inversion
+          <button class="pause-btn button is-normal is-dark " style="float: right; margin-left: 0.5rem;"><span class="icon"><i class="fas fa-pause"></i></span></button>
+          <button class="play-btn button is-normal is-dark " style="float: right; margin-left: 0.5rem;"><span class="icon"><i class="fas fa-play"></i></span></button>
+          <button class="backward-btn button is-normal is-dark " style="float: right;"><span class="icon"><i class="fas fa-backward"></i></span></button>
+        </h2>
+        <!-- Side by Side Bilinear interpolation, Ours -->
+        <div>
+          <p>DDIM inversion is a popular inversion method that has also been used to obtain more
+            informative noise priors for video editing tasks. However, it suffers from two main 
+            problems. First, it only produces one noise map per image. 
+            This may not always be compatible with other diffusion-based methods like SDEdit or I&sup2SB, 
+            which uses DDPM. Second, as it remains primarily an inversion method, the spatial and 
+            temporal information of the image are entangled inside the noise.
+        </p>
+        <br>
+        <p>We compare our method with DDIM inversion in the appearance transfer example with SDEdit. We experiment with two settings:
+          <ul>
+            <li><b>DDIM inversion to intermediate step</b> (first row): similar to how we applied SDEdit above, 
+              we use DDIM to invert the synthetic video frames back to an intermediate timestep (60% of total steps), and
+            then denoise it using forward DDIM. As expected, since there is no prompt to be changed or other settings to be modified,
+            it mostly reconstructs the original synthetic video without adding any realistic appearance details.</li>
+            <li><b>DDIM inversion as initial noise</b> (second row): we run a full DDIM inversion for each frame to obtain a noise map,
+            which we treat similarly to the other noise priors we showed above: we add it to input frames and 
+          denoise using forward DDIM. Because the input video is far from the data distribution of the model (trained on realistic images of
+          bedrooms), the DDIM-inverted noise is far from Gaussian. This makes it a poor candidate as a noise prior.</li>
+          </ul>
+          As a comparison, our noise prior only contains temporal information, so the model can generate realistic details
+          on top of the synthetic scene without being constrained to reconstruct the input sequence. Furthermore, by applying 
+          the same warping to different noise samples (which DDIM inversion cannot do), we can obtain different variations 
+          in the final result (third row). Note that for fairness, we also use deterministic DDIM for denoising in our method, i.e. 
+          our noise warping method is only used once for the initial noise.
+        </p>
+        <br>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p>DDIM inversion to intermediate step</p>
+            <video poster=""  controls muted loop>
+              <source src="./docs/assets/videos/DDIM/samples_ddim_rec_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br>
+        <div id="hero-list">
+          <div id="tree">
+            <p>DDIM inversion as initial noise</p>
+            <video poster=""  controls muted loop>
+              <source src="./docs/assets/videos/DDIM/samples_ddim_add_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br>
+        <div id="hero-list">
+          <div id="tree">
+            <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+            <video poster=""  controls muted loop>
+              <source src="./docs/assets/videos/DDIM/samples_adv_xfa.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div>
+          <br>
+          <p>
+            Here is a visual comparison between our noise prior and the one obtained from 
+            DDIM inversion. While DDIM inversion produces temporally correlated noise, its 
+            distribution heavily depends on how far the input video is from the training
+            distribution of the diffusion model. In contrast, our warping method retains the 
+            Gaussian properties of the noise.
+          </p>
+          <br>
+        </div>
+        <div id="hero-list">
+          <div id="tree">
+            <p>DDIM inversion noise</p>
+            <video poster=""  controls muted loop>
+              <source src="./docs/assets/videos/DDIM/noise_ddim.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div id="tree">
+            <p style="font-weight: bold;">\(\smallint\)-noise (Ours)</p>
+            <video poster=""  controls muted loop>
+              <source src="./docs/assets/videos/DDIM/noise_adv.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Comparison with DDIM inversion -->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+               <!-- Main page Link -->
+               <span class="link-block">
+                <a href="index.html" 
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-link"></i>
+                </span>
+                <span>Back to Main Page</span>
+              </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
